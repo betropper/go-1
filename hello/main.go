@@ -1,7 +1,10 @@
 package main
 
-import "fmt"
+import (
+"fmt"
+c "github.com/betropper/go-1/colors"
+)
 
 func main() {
-  fmt.Println("Hello, world!")
+  fmt.Println(c.red + "Hello, world!")
 }
