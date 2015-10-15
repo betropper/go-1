@@ -14,19 +14,22 @@ func rolldice(number string) int {
 	total := 0
 	for i := 0; i <= n; i++ {
 		oneroll := rand.Intn(6)
+		printedroll := strconv.Itoa(oneroll)
+		print(c.X + c.Random() + printedroll + " ")
 		total += oneroll
 	}
+	fmt.Println("")
 	return total
 }
 
 func main() {
-	if os.Args[1] {
-		dicecount := os.Args[1]
+	var dicecount string
+	if len(os.Args) == 2 {
+		dicecount = os.Args[1]
 	} else {
 		fmt.Println(c.Clear + c.Cyan + "How many dice would you like to roll?")
-		dicecount := input.Ask("")
-
+		dicecount = input.Ask(c.X + c.Magenta + "")
 	}
 	printedtotal := strconv.Itoa(rolldice(dicecount))
-	fmt.Println(c.X + c.Cyan + "You rolled " + c.Magenta + dicecount + " dice, for a total of " + c.X + c.Magenta + printedtotal + ".")
+	fmt.Println(c.X + c.Cyan + "You rolled " + c.Magenta + dicecount + c.X + c.Cyan + " dice, for a total of " + c.X + c.Magenta + printedtotal + ".")
 }
