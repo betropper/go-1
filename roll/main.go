@@ -12,8 +12,8 @@ import (
 func rolldice(number string) int {
 	n, _ := strconv.Atoi(number)
 	total := 0
-	for i := 0; i <= n; i++ {
-		oneroll := rand.Intn(6)
+	for i := 0; i < n; i++ {
+		oneroll := rand.Intn(6) + 1
 		printedroll := strconv.Itoa(oneroll)
 		print(c.X + c.Random() + printedroll + " ")
 		total += oneroll
