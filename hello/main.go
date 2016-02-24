@@ -6,5 +6,5 @@ c "github.com/betropper/go-1/colors"
 )
 
 func main() {
-  fmt.Println(c.red + "Hello, world!")
+  fmt.Println(c.Red + "Hello, world!")
 }
